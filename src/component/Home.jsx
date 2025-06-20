@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import image1 from '../assets/image1.jpg'; // Import the image
+import image1 from '../assets/image1.jpg'; // Verify this path
 
 const Home = () => {
   return (
