@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "scripts": {
     "build": "vite build && mkdir -p dist/portfolio1 && mv dist/* dist/portfolio1/ || true",
     "dev": "vite",
     "lint": "eslint .",
     "preview": "vite preview"
+  }
   },
   "dependencies": {
     "react": "^19.1.0",
