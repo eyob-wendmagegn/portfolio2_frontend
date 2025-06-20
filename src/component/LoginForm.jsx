@@ -11,13 +11,18 @@ const LoginForm = ({ setIsLoggedIn }) => {
       setError('Please fill in both email and password');
       return;
     }
+
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://your-default-backend-url'; // Fallback URL
+    console.log('API URL:', apiUrl); // Debugging
+
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
+      const res = await fetch(`${apiUrl}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
+      console.log('API Response:', data); // Debugging
       if (res.ok && data.success) {
         localStorage.setItem('isLoggedIn', 'true');
         setIsLoggedIn(true);
@@ -26,6 +31,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
         setError(data.error || 'Invalid email or password');
       }
     } catch (err) {
+      console.error('Login error:', err); // Debugging
       setError('An error occurred. Please try again.');
     }
   };
@@ -35,9 +41,16 @@ const LoginForm = ({ setIsLoggedIn }) => {
       <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md transform transition-all duration-300 hover:shadow-2xl">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">Login</h2>
         {error && <p className="text-red-600 text-center mb-4">{error}</p>}
+        {!import.meta.env.VITE_API_URL && (
+          <p className="text-yellow-600 text-center mb-4">
+            Warning: API URL is not configured. Using fallback URL.
+          </p>
+        )}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -48,7 +61,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
             <input
               type="password"
               id="password"
