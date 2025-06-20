@@ -7,5 +7,5 @@ export default defineConfig({
     outDir: 'dist', // Initial output directory
   },
   assetsInclude: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif', '**/*.pdf', '**/*.doc', '**/*.docx'],
-  base: '/portfolio1/', // Match the subdirectory deployment
+  base: '/portfolio1/', // Match the subdirectory created by the build script
 });
