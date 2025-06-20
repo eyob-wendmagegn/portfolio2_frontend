@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import homeimage from '../../src/assets/image1.jpg'
+import homeimage from '../assets/image1.jpg'
 
 const Home = () => {
   return (

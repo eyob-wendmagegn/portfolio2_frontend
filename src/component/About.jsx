@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import aboutimage from '../../src/assets/image3.jpg'
+import aboutimage from '../assets/image1.jpg'
 
 const About = () => {
   const [aboutContent, setAboutContent] = useState('');
