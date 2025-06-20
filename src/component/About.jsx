@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import image3 from '../assets/image3.jpg'; // Import the image
 
 const About = () => {
   const [aboutContent, setAboutContent] = useState('');
@@ -21,7 +22,7 @@ const About = () => {
           </div>
           <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
             <img
-              src="/src/assets/image3.jpg"
+              src={image3} // Use the imported image
               alt="About Me"
               loading="lazy"
               className="w-full max-w-md h-auto rounded-xl shadow-lg object-cover transition-transform duration-300 hover:scale-105"
