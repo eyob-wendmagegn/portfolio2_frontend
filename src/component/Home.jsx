@@ -7,7 +7,7 @@ const Home = () => {
         <h1 className="text-5xl font-bold text-gray-900 mb-6">Welcome to Eyob's Portfolio</h1>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Explore my journey and projects as a 4th-year Computer Science student at Wolaita University.</p>
         <img
-          src="/src/assets/image1.jpg"
+          src=".././assets/imag1.jpg"
           alt="Home Background"
           loading="lazy"
           className="mt-8 w-full max-w-2xl mx-auto rounded-xl shadow-lg object-cover max-h-96"
