@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-
 export default defineConfig({
-  plugins: [react(),],
+  plugins: [react()],
   build: {
-    outDir: 'dist', // Ensure output directory is 'dist'
+    outDir: 'dist', // Initial output directory
   },
   assetsInclude: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif', '**/*.pdf', '**/*.doc', '**/*.docx'],
-  base: '/', // Set to '/' for root deployment on Render
+  base: '/portfolio1/', // Match the subdirectory created by the build script
 });
