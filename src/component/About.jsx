@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import imag3 from '../../dist/assets/image3.jpg'
+import imag3 from '.././assets/imag3';
 const About = () => {
   const [aboutContent, setAboutContent] = useState('');
 
